@@ -1,11 +1,7 @@
-import org.w3c.dom.Text;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class SimpleForm extends JFrame {
+public class SimpleForm {
 
     private JButton resultBtn;
     private JTextField sum1TF;
@@ -13,9 +9,9 @@ public class SimpleForm extends JFrame {
     private JLabel resultLabel;
 
     public SimpleForm() {
-        super("Сумматор");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Container container = this.getContentPane();
+        JFrame frame = new JFrame("Сумматор");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container container =  frame.getContentPane();
         container.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
         container.setLayout(new GridBagLayout());
@@ -45,7 +41,7 @@ public class SimpleForm extends JFrame {
 
         constraints.gridy = 2;
         constraints.gridx = 1;
-        resultLabel = new JLabel("Здесьь будет результат");
+        resultLabel = new JLabel("Здесь будет результат");
         resultLabel.setHorizontalAlignment(SwingConstants.CENTER);
         container.add(resultLabel, constraints);
 
@@ -56,7 +52,7 @@ public class SimpleForm extends JFrame {
             resultLabel.setText("Результат: " +  result);
         });
 
-        this.pack();
-        this.setVisible(true);
+        frame.pack();
+        frame.setVisible(true);
     }
 }
